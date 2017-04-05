@@ -27,7 +27,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def SpeedupSymmetric(f,n,r):
-    s = 1.0/(((1-f)/Perf(r))+(f/(n/r)))
+    s = 1.0/(((1-f)/Perf(r))+(f/(Perf(r)*(n/r))))
     return s
     
 def SpeedupAsymmetric(f,n,r):
@@ -46,8 +46,8 @@ def Perf(r):
 f = [0.999, 0.99, 0.975, 0.9, 0.5]
 
 fig, axs = plt.subplots(3,2)
-fig.subplots_adjust(left=0.08,right=0.94,bottom=0.1,top=0.9,
-                    wspace=0.3,hspace=0.2)
+fig.subplots_adjust(left=0.08,right=0.98,wspace=0.3,hspace=0.3)
+fig.set_size_inches(8,8)
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 16, num=16, endpoint=True)
@@ -69,9 +69,12 @@ ax.set_xscale('log', basex=2)
 ax.set_xlim(1, 16)
 ax.set_ylim(2, 16)
 ax.set_xticks([1,2,4,8,16])
-ax.set_xticklabels(['0','2','4','8','16'])
+ax.set_xticklabels(['0','2','4','8','16'],fontsize='small')
+ax.set_yticks([2,4,6,8,10,12,14,16])
+ax.set_yticklabels(['2','4','6','8','10','12','14','16'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Symmetric}$')
+fig.text(0.01,0.63,'(a)')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 256, num=256, endpoint=True)
@@ -93,9 +96,13 @@ ax.set_xscale('log', basex=2)
 ax.set_xlim(1, 256)
 ax.set_ylim(2, 250)
 ax.set_xticks([1,2,4,8,16,32,64,128,256])
-ax.set_xticklabels(['0','2','4','8','16','32','64','128','256'])
+ax.set_xticklabels(['0','2','4','8','16','32','64','128','256'],
+                fontsize='small')
+ax.set_yticks([50,100,150,200,250])
+ax.set_yticklabels(['50','100','150','200','250'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Symetric}$')
+fig.text(0.51,0.63,'(b)')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 16, num=16, endpoint=True)
@@ -117,9 +124,12 @@ ax.set_xscale('log', basex=2)
 ax.set_xlim(1, 16)
 ax.set_ylim(2, 16)
 ax.set_xticks([1,2,4,8,16])
-ax.set_xticklabels(['0','2','4','8','16'])
+ax.set_xticklabels(['0','2','4','8','16'],fontsize='small')
+ax.set_yticks([2,4,6,8,10,12,14,16])
+ax.set_yticklabels(['2','4','6','8','10','12','14','16'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Asymetric}$')
+fig.text(0.01,0.34,'(c)')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 256, num=256, endpoint=True)
@@ -141,9 +151,13 @@ ax.set_xscale('log', basex=2)
 ax.set_xlim(1, 256)
 ax.set_ylim(2, 250)
 ax.set_xticks([1,2,4,8,16,32,64,128,256])
-ax.set_xticklabels(['0','2','4','8','16','32','64','128','256'])
+ax.set_xticklabels(['0','2','4','8','16','32','64','128','256']
+                ,fontsize='small')
+ax.set_yticks([50,100,150,200,250])
+ax.set_yticklabels(['50','100','150','200','250'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Asymetric}$')
+fig.text(0.51,0.34,'(d)')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 16, num=16, endpoint=True)
@@ -165,9 +179,12 @@ ax.set_xscale('log', basex=2)
 ax.set_xlim(1, 16)
 ax.set_ylim(2, 16)
 ax.set_xticks([1,2,4,8,16])
-ax.set_xticklabels(['0','2','4','8','16'])
+ax.set_xticklabels(['0','2','4','8','16'],fontsize='small')
+ax.set_yticks([2,4,6,8,10,12,14,16])
+ax.set_yticklabels(['2','4','6','8','10','12','14','16'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Dynamic}$')
+fig.text(0.01,0.05,'(e)')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 256, num=256, endpoint=True)
@@ -189,8 +206,13 @@ ax.set_xscale('log', basex=2)
 ax.set_xlim(1, 256)
 ax.set_ylim(2, 250)
 ax.set_xticks([1,2,4,8,16,32,64,128,256])
-ax.set_xticklabels(['0','2','4','8','16','32','64','128','256'])
+ax.set_xticklabels(['0','2','4','8','16','32','64','128','256']
+                ,fontsize='small')
+ax.set_yticks([50,100,150,200,250])
+ax.set_yticklabels(['50','100','150','200','250'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Dynamic}$')
+fig.text(0.51,0.05,'(c)')
 
+fig.savefig('./figure2.png')
 plt.show()
