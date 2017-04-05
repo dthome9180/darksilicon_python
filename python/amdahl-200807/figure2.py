@@ -47,7 +47,7 @@ f = [0.999, 0.99, 0.975, 0.9, 0.5]
 
 fig, axs = plt.subplots(3,2)
 fig.subplots_adjust(left=0.08,right=0.98,wspace=0.3,hspace=0.3)
-fig.set_size_inches(8,8)
+fig.set_size_inches(8,9)
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 16, num=16, endpoint=True)
@@ -74,7 +74,8 @@ ax.set_yticks([2,4,6,8,10,12,14,16])
 ax.set_yticklabels(['2','4','6','8','10','12','14','16'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Symmetric}$')
-fig.text(0.01,0.63,'(a)')
+fig.text(0.12,0.88,'Symmetric, n = 16',fontsize='small')
+fig.text(0.01,0.64,'(a)')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 256, num=256, endpoint=True)
@@ -102,7 +103,8 @@ ax.set_yticks([50,100,150,200,250])
 ax.set_yticklabels(['50','100','150','200','250'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Symetric}$')
-fig.text(0.51,0.63,'(b)')
+fig.text(0.60,0.88,'Symmetric, n=256',fontsize='small')
+fig.text(0.51,0.64,'(b)')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 16, num=16, endpoint=True)
@@ -129,7 +131,8 @@ ax.set_yticks([2,4,6,8,10,12,14,16])
 ax.set_yticklabels(['2','4','6','8','10','12','14','16'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Asymetric}$')
-fig.text(0.01,0.34,'(c)')
+fig.text(0.24,0.59,'Asymmetric, n=16',fontsize='small')
+fig.text(0.01,0.35,'(c)')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 256, num=256, endpoint=True)
@@ -157,7 +160,8 @@ ax.set_yticks([50,100,150,200,250])
 ax.set_yticklabels(['50','100','150','200','250'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Asymetric}$')
-fig.text(0.51,0.34,'(d)')
+fig.text(0.60,0.59,'Symmetric, n=256',fontsize='small')
+fig.text(0.51,0.35,'(d)')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 16, num=16, endpoint=True)
@@ -184,7 +188,8 @@ ax.set_yticks([2,4,6,8,10,12,14,16])
 ax.set_yticklabels(['2','4','6','8','10','12','14','16'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Dynamic}$')
-fig.text(0.01,0.05,'(e)')
+fig.text(0.09,0.30,'Symmetric, n=16',fontsize='small')
+fig.text(0.01,0.06,'(e)')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 256, num=256, endpoint=True)
@@ -212,7 +217,8 @@ ax.set_yticks([50,100,150,200,250])
 ax.set_yticklabels(['50','100','150','200','250'],fontsize='small')
 ax.set_xlabel(r'$r$BCEs')
 ax.set_ylabel(r'Speedup$_\mathrm{Dynamic}$')
-fig.text(0.51,0.05,'(c)')
+fig.text(0.60,0.30,'Symmetric, n=256',fontsize='small')
+fig.text(0.51,0.06,'(c)')
 
 fig.savefig('./figure2.png')
-plt.show()
+#plt.show()
