@@ -46,7 +46,8 @@ def Perf(r):
 f = [0.999, 0.99, 0.975, 0.9, 0.5]
 
 fig, axs = plt.subplots(3,2)
-#fig.subplots_adjust(left=0.08, right=0.98, wspace=0.3)
+fig.subplots_adjust(left=0.08,right=0.94,bottom=0.1,top=0.9,
+                    wspace=0.3,hspace=0.2)
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 16, num=16, endpoint=True)
@@ -69,6 +70,8 @@ ax.set_xlim(1, 16)
 ax.set_ylim(2, 16)
 ax.set_xticks([1,2,4,8,16])
 ax.set_xticklabels(['0','2','4','8','16'])
+ax.set_xlabel('rBCEs')
+ax.set_ylabel('SpeedupSymetric')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 256, num=256, endpoint=True)
@@ -91,6 +94,8 @@ ax.set_xlim(1, 256)
 ax.set_ylim(2, 250)
 ax.set_xticks([1,2,4,8,16,32,64,128,256])
 ax.set_xticklabels(['0','2','4','8','16','32','64','128','256'])
+ax.set_xlabel('rBCEs')
+ax.set_ylabel('SpeedupSymetric')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 16, num=16, endpoint=True)
@@ -113,6 +118,8 @@ ax.set_xlim(1, 16)
 ax.set_ylim(2, 16)
 ax.set_xticks([1,2,4,8,16])
 ax.set_xticklabels(['0','2','4','8','16'])
+ax.set_xlabel('rBCEs')
+ax.set_ylabel('SpeedupAsymetric')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 256, num=256, endpoint=True)
@@ -135,6 +142,8 @@ ax.set_xlim(1, 256)
 ax.set_ylim(2, 250)
 ax.set_xticks([1,2,4,8,16,32,64,128,256])
 ax.set_xticklabels(['0','2','4','8','16','32','64','128','256'])
+ax.set_xlabel('rBCEs')
+ax.set_ylabel('SpeedupAsymetric')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 16, num=16, endpoint=True)
@@ -157,6 +166,8 @@ ax.set_xlim(1, 16)
 ax.set_ylim(2, 16)
 ax.set_xticks([1,2,4,8,16])
 ax.set_xticklabels(['0','2','4','8','16'])
+ax.set_xlabel('rBCEs')
+ax.set_ylabel('SpeedupDynamic')
 
 # rBCEs, the number of total BCEs
 x = np.linspace(1, 256, num=256, endpoint=True)
@@ -179,5 +190,7 @@ ax.set_xlim(1, 256)
 ax.set_ylim(2, 250)
 ax.set_xticks([1,2,4,8,16,32,64,128,256])
 ax.set_xticklabels(['0','2','4','8','16','32','64','128','256'])
+ax.set_xlabel('rBCEs')
+ax.set_ylabel('SpeedupDynamic')
 
 plt.show()
