@@ -20,16 +20,18 @@ s2=c2/p2
 
 m2=MissRate(p2,p1,s2,s1,m1,a)
 
-fig, axes =plt.subplots()
+fig = plt.figure(1, figsize=[7,4])
+
+axes=plt.gca()
 
 line1 = axes.plot(p2,m2,'b^-',label='New Traffic')
 line2 = axes.plot(p2,np.ones(28),'bo-', label='Available off-chip bandwidth')
 
 axes.set_xticks(np.arange(15)*2)
 axes.set_yticks(np.arange(11))
-axes.set_xlabel('Number of Cores')
-axes.set_ylabel('Normallizated traffic')
+axes.set_xlabel('Number of Cores',fontsize=8)
+axes.set_ylabel('Normallizated traffic',fontsize=8)
 axes.yaxis.grid(True)
-axes.legend()
+axes.legend(loc='upper left', fontsize=8)
 
 plt.show()
