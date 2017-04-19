@@ -20,7 +20,7 @@ s2=c2/p2
 
 m2=MissRate(p2,p1,s2,s1,m1,a)
 
-fig = plt.figure(1, figsize=[7,4])
+fig = plt.figure(1, figsize=[7,2.5])
 
 axes=plt.gca()
 
@@ -32,6 +32,16 @@ axes.set_yticks(np.arange(11))
 axes.set_xlabel('Number of Cores',fontsize=8)
 axes.set_ylabel('Normallizated traffic',fontsize=8)
 axes.yaxis.grid(True)
-axes.legend(loc='upper left', fontsize=8)
+axes.legend(loc='best', fontsize=8)
+
+axes.annotate('BW Limited Scaling', xy=(11, 1),
+            xytext=(11,5), fontsize=8,
+            arrowprops=dict(facecolor='black',alpha=0.5),
+            horizontalalignment='right', verticalalignment='top')
+axes.annotate('Ideal Scaling', xy=(16, 2),
+            xytext=(16,6), fontsize=8,
+            arrowprops=dict(facecolor='black',alpha=0.5),
+            horizontalalignment='right', verticalalignment='top')
+
 
 plt.show()
